@@ -1,0 +1,129 @@
+/* 
+font-family: 'Mukta', sans-serif; // Regular 400 and Bold 700 //
+font-family: 'Poppins', sans-serif; // Regular 400 and Bold 700 //
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 62.5% = 10px */
+
+  --ff-primary: 'Mukta', sans-serif;
+  --ff-secondary: 'Poppins', sans-serif;
+
+  --bg-body: #cabfb1;
+  --bg-card: #8b6dbb;
+  --bg-cards: #e4dfec41;
+  --bg-card-shadow: rgba(75, 77, 104, 0.376);
+  --bg-card-hover: #000000b7;
+
+  --fc-poke-name: #eeb30f;
+  --fc-poke-number: #14213d;
+
+  --fs-h1: 3rem;
+  --fs-h2: 1.8rem;
+  --fs-p: 1.4rem;
+}
+
+body {
+  background-color: var(--bg-body);
+  font-family: var(--ff-primary);
+  text-align: center;
+}
+
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 30rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+main {
+  margin-bottom: 5rem;
+}
+
+main section {
+  margin-bottom: 3rem;
+  padding: 3rem;
+  background-color: var(--bg-cards);
+  border-radius: 1rem;
+}
+
+.poke-cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.poke-card {
+  background-color: var(--bg-card);
+  box-shadow: 0.5rem 0.5rem var(--bg-card-shadow);
+  border-radius: 1rem;
+}
+
+.poke-card:hover {
+  background-color: var(--bg-card-hover);
+  transform: scale(1.13);
+  transition: all 0.3s ease;
+}
+
+.poke-card h2,
+.poke-card p {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-h2);
+  line-height: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-top: 1rem;
+  color: var(--fc-poke-name);
+  font-weight: normal;
+}
+
+.poke-card p {
+  font-size: var(--fs-p);
+  font-weight: 700;
+  line-height: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  width: 15rem;
+  height: auto;
+  cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --fs-h1: 3rem;
+    --fs-h2: 1.8rem;
+    --fs-p: 1.4rem;
+  }
+
+  .container {
+    max-width: 110rem;
+  }
+
+  .poke-cards {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .poke-cards div:nth-child(1) {
+    grid-column: span 1;
+  }
+
+  img {
+    width: 15rem;
+    height: auto;
+  }
+}
